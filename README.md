@@ -82,13 +82,13 @@ website_id = "88972681-a00c-4b3b-a383-cab281636484"
 session_id = "session_9df2a21e-f113-41d4-8ed2-bad8b49cafd1"
 
 client.website.send_message_in_conversation(
-  website_id, session_id,
-
-  {
+    website_id, 
+    session_id,
+    {
     "type": "text",
     "content": "This message was sent from python-crisp-api! :)",
     "from": "operator",
     "origin": "chat"
-  }
+    }
 )
 ```
