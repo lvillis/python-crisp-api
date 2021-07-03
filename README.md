@@ -1,24 +1,36 @@
+<div align="center">
+
 # python-crisp-api
+*🐍 Crisp API Python Wrapper.*
 
-The Crisp API Python wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your Python code.
+[![](https://img.shields.io/github/license/lvillis/python-crisp-api?style=flat-square)](https://github.com/lvillis/python-crisp-api)
+[![](https://img.shields.io/github/repo-size/lvillis/python-crisp-api?style=flat-square&color=328657)](https://github.com/lvillis/python-crisp-api)
+[![Github Actions](https://img.shields.io/github/workflow/status/lvillis/python-crisp-api/Publish?style=flat-square)](https://github.com/lvillis/python-crisp-api/actions) 
+[![](https://img.shields.io/github/last-commit/lvillis/python-crisp-api?style=flat-square&label=commits)](https://github.com/lvillis/python-crisp-api)
+[![](https://img.shields.io/pypi/dm/python-crisp?style=flat-square)](https://github.com/lvillis/python-crisp-api)
 
-Copyright 2018 Crisp IM SARL. See LICENSE for copying information.
+</div>
 
+---
+
+Unofficial Crisp API Python wrapper. Use Python code to authenticate, send messages, get conversations, and access your proxy account.
+
+
+* **😘 Official Repository**: [python-crisp-api](https://github.com/crisp-im/python-crisp-api)
 * **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.chat/api/v1/) at reference revision: 12/31/2017
-* **😘 Maintainers**: [@valeriansaliou](https://github.com/valeriansaliou), [@eliottvincent](https://github.com/eliottvincent)
 
 ## Usage
 
 Install the library:
 
 ```bash
-pip install crisp-api
+pip install python-crisp
 ```
 
 Then, import it:
 
 ```python
-from crisp_api import Crisp
+from python_crisp import Crisp
 ```
 
 Construct a new authenticated Crisp client with your `identifier` and `key` tokens.
@@ -80,100 +92,3 @@ client.website.send_message_in_conversation(
   }
 )
 ```
-
-### Website
-
-* **Website Conversations**
-  * **List Conversations**: `client.website.list_conversations(website_id, page_number)`
-  * **Search Conversations**: `client.website.search_conversations(website_id, page_number, search_query, search_type, search_operator, include_empty, filter_unread, filter_resolved, filter_not_resolved, filter_mention, filter_assigned, filter_unassigned, filter_date_start, filter_date_end, order_date_created", order_date_updated)`
-
-* **Website Conversation**
-  * **Create A New Conversation**: `client.website.create_new_conversation(website_id, data)`
-  * **Check If Conversation Exists**: `client.website.check_conversation_exists(website_id, session_id)`
-  * **Get A Conversation**: `client.website.get_conversation(website_id, session_id)`
-  * **Remove A Conversation**: `client.website.remove_conversation(website_id, session_id)`
-  * **Initiate A Conversation With Existing Session**: `client.website.initiate_conversation_with_existing_session(website_id, session_id)`
-  * **Get Messages In Conversation**: `client.website.get_messages_in_conversation(website_id, session_id, query)`
-  * **Send A Message In Conversation**: `client.website.send_message_in_conversation(website_id, session_id, query)`
-  * **Update A Message In Conversation**: `client.website.update_message_in_conversation(website_id, session_id, fingerprint, data)`
-  * **Compose A Message In Conversation**: `client.website.compose_message_in_conversation(website_id, session_id, data)`
-  * **Mark Messages As Read In Conversation**: `client.website.mark_messages_read_in_conversation(website_id, session_id, data)`
-  * **Mark Messages As Delivered In Conversation**: `client.website.mark_messages_delivered_in_conversation(website_id, session_id, data)`
-  * **Get Conversation Routing Assign**: `client.website.get_conversation_routing_assign(website_id, session_id)`
-  * **Assign Conversation Routing**: `client.website.assign_conversation_routing(website_id, session_id, data)`
-  * **Get Conversation Metas**: `client.website.get_conversation_metas(website_id, session_id)`
-  * **Update Conversation Metas**: `client.website.update_conversation_metas(website_id, session_id, data)`
-  * **List Conversation Pages**: `client.website.list_conversation_pages(website_id, session_id, page_number)`
-  * **List Conversation Events**: `client.website.list_conversation_events(website_id, session_id, page_number)`
-  * **Get Conversation State**: `client.website.get_conversation_state(website_id, session_id)`
-  * **Change Conversation State**: `client.website.change_conversation_state(website_id, session_id, data)`
-  * **Get Block Status For Conversation**: `client.website.get_block_status_for_conversation(website_id, session_id)`
-  * **Block Incoming Messages For Conversation**: `client.website.block_incoming_messages_for_conversation(website_id, session_id, data)`
-  * **Request Email Transcript For Conversation**: `client.website.request_email_transcript_for_conversation(website_id, session_id, data)`
-
-* **Website People**
-  * **Get People Statistics**: `client.website.get_people_statistics(website_id)`
-  * **List People Segments**: `client.website.list_people_segments(website_id, page_number)`
-  * **List People Profiles**: `client.website.list_people_profiles(website_id, page_number)`
-  * **Add New People Profile**: `client.website.add_new_people_profile(website_id, data)`
-  * **Check If People Profile Exists**: `client.website.check_people_profile_exists(website_id, people_id)`
-  * **Get People Profile**: `client.website.get_people_profile(website_id, people_id)`
-  * **Save People Profile**: `client.website.save_people_profile(website_id, people_id, data)`
-  * **Update People Profile**: `client.website.update_people_profile(website_id, people_id, data)`
-  * **Remove People Profile**: `client.website.remove_people_profile(website_id, people_id)`
-  * **List People Conversations**: `client.website.list_people_conversations(website_id, people_id, page_number)`
-  + **Add A People Event**: `client.website.add_people_event(website_id, people_id, data)`
-  + **List People Events**: `client.website.list_people_events(website_id, people_id, page_number)`
-  + **Get People Data**: `client.website.get_people_data(website_id, people_id)`
-  + **Save People Data**: `client.website.save_people_data(website_id, people_id, data)`
-  + **Get People Subscription Status**: `client.website.get_people_subscription_status(website_id, people_id)`
-  + **Update People Subscription Status**: `client.website.update_people_subscription_status(website_id, people_id, data)`
-
-* **Website Base**
-  * **Create Website**: `client.website.create_website(data)`
-  * **Get A Website**: `client.website.get_website(website_id)`
-  * **Delete A Website**: `client.website.delete_website(website_id)`
-
-* **Website Batch**
-  * **Batch Resolve Items**: `client.website.batch_resolve_items(website_id, data)`
-  * **Batch Read Items**: `client.website.batch_read_items(website_id, data)`
-  * **Batch Remove Items**: `client.website.batch_remove_items(website_id, data)`
-
-* **Website Availability**
-  * **Get Website Availability Status**: `client.website.get_website_availability_status(website_id)`
-
-* **Website Operator**
-  * **List Website Operators**: `client.website.list_website_operators(website_id)`
-  * **List Last Active Website Operators**: `client.website.list_last_active_website_operators(website_id)`
-
-* **Website Settings**
-  * **Get Website Settings**: `client.website.get_website_settings(website_id)`
-  * **Update Website Settings**: `client.website.update_website_settings(website_id, data)`
-
-* **Website Visitors**
-  * **Count Visitors**: `client.website.count_visitors(website_id)`
-  * **List Visitors**: `client.website.list_visitors(website_id, page_number)`
-
-### Plugin
-
-* **Plugin Connect**
-  * **Get Plugin Connect Account**: `client.get_connect_account()`
-  * **Check Plugin Connect Session Validity**: `client.check_connect_session_validity()`
-  * **List All Connected Websites**: `client.list_all_connect_websites(page_number, filter_configured)`
-
-* **Plugin Subscription**
-  * **List All Active Subscriptions**: `client.list_all_active_subscriptions()`
-  * **List Subscriptions For Website**: `client.list_subscriptions_website(website_id)`
-  * **Get Subscription Details**: `client.get_subscription_details(website_id, plugin_id)`
-  * **Subscribe Website To Plugin**: `client.subscribe_plugin_to_website(website_id)`
-  * **Unsubscribe Plugin From Website**: `client.unsubscribe_plugin_from_website(website_id, plugin_id)`
-  * **Get Subscription Settings**: `client.get_subscription_settings(website_id, plugin_id)`
-  * **Save Subscription Settings**: `client.save_subscription_settings(website_id, plugin_id, settings)`
-  * **Update Subscription Settings**: `client.update_subscription_settings(website_id, plugin_id, settings)`
-  * **Forward Plugin Payload To Channel**: `client.forward_plugin_payload_to_channel(website_id, plugin_id, data)`
-  * **Dispatch Plugin Event**: `client.dispatch_plugin_event(website_id, plugin_id, data)`
-
-### Bucket
-
-* **Bucket URL**
-  * **Generate Bucket URL**: `client.bucket.generate_bucket_url(data)`
